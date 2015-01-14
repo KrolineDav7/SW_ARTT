@@ -62,11 +62,29 @@ public class Modelo implements IModelo {
         this.name= name;
     }
     
+  	@Override
+   public boolean isEnable(){
+     return enabled;
+   }
     
-    public void setEnabled(boolean enabled) {
+   public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+  
+  	@Override
+  	public String getDescription(){
+     return description;
+   }
+   public void setDescription(String description){
+     this.description=description;
+   }
 
+   public Colonia getColonia() {
+        return colonia;
+    }
+    public void setColonia(Colonia colonia){
+        this.colonia=colonia;
+    }
 
     @Override
     public int hashCode() {
