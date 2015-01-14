@@ -20,6 +20,7 @@ import javax.validation.constraints.Size;
 /**
  *
  * @author Carolina
+ * @author Jair
  */
 @Entity
 public class Colonia implements IColonia {
