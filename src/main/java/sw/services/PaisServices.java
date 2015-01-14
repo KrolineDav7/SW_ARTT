@@ -33,8 +33,8 @@ public class PaisServices {
   
     public int addPais(Pais pais){
         Pais pais_=new Pais();
-        pais_.setName(pais.getName());
-        pais_.setEnabled(pais.isEnable());
+        pais_.setNombre(pais.getNombre());
+        pais_.setDisponible(pais.getDisponible());
         return dao.saveAndFlush(pais_)!=null? 0:-1;
        
     }
@@ -42,8 +42,8 @@ public class PaisServices {
        
         Pais temp=dao.findOne(pais.getId());
         temp.setId(pais.getId());
-        temp.setName(pais.getName());
-        temp.setEnabled(pais.isEnable());
+        temp.setNombre(pais.getNombre());
+        temp.setDisponible(pais.getDisponible());
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
  
