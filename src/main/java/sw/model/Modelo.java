@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -34,7 +36,13 @@ public class Modelo implements IModelo {
     @Size(min=1, max =300)
     @Column(unique=true)
     private String description;
+  
+  	 @NotNull
+    private boolean enabled;
     
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "ColoniaID", referencedColumnName = "id")
+    private Colonia colonia; 
     
 
     public int getId() {
@@ -43,6 +51,39 @@ public class Modelo implements IModelo {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+  	 @Override 
+  	 public String getName(){
+      return name;
+    }
+  
+  	 public void setName(String name) {
+        this.name= name;
+    }
+    
+  	@Override
+   public boolean isEnable(){
+     return enabled;
+   }
+    
+   public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+  
+  	@Override
+  	public String getDescription(){
+     return description;
+   }
+   public void setDescription(String description){
+     this.description=description;
+   }
+
+   public Colonia getColonia() {
+        return colonia;
+    }
+    public void setColonia(Colonia colonia){
+        this.colonia=colonia;
     }
 
     @Override
@@ -67,9 +108,6 @@ public class Modelo implements IModelo {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "sw.model.Modelo[ id=" + id + " ]";
-    }
+   
     
 }
