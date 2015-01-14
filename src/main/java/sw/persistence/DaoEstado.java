@@ -1,12 +1,12 @@
 package sw.persistence;
 
-import sw.model.Modelo;
+import sw.model.Estado;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author jairsh
  */
-public interface DaoModelo extends JpaRepository<Modelo, Integer> 
+public interface DaoEstado extends JpaRepository<Estado, Integer> 
 {
 }
