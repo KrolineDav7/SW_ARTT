@@ -19,7 +19,7 @@ public class PaisController
   
   @RequestMapping(value = "/uno/{id}", method=RequestMethod.GET)
     public @ResponseBody Pais getOne(@PathVariable("id") Integer id){
-        return soapuntoi.obtenerPorId(id);
+        return soapais.getOne(id);
     }
   
   @RequestMapping(value = "/todos", method=RequestMethod.GET)

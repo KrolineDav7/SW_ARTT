@@ -12,10 +12,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -30,10 +31,10 @@ public class Estado implements IEstado {
     @NotNull
     @Size(min = 1, max = 60)
     @Column(unique = true)
-    private String name;
+    private String nombre;
     
     @NotNull
-    private boolean enabled;
+    private boolean disponible;
     
     @ManyToOne(optional = false)
     @JoinColumn(name = "PaisID", referencedColumnName = "id")
@@ -63,7 +64,7 @@ public class Estado implements IEstado {
             return false;
         }
         final Estado other = (Estado) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.nombre, other.nombre)) {
             return false;
         }
         return true;
@@ -77,20 +78,20 @@ public class Estado implements IEstado {
     }
 
     @Override
-    public String getName() {
-        return name;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setName(String name) {
-        this.name= name;
+    public void setNombre(String nombre) {
+        this.nombre= nombre;
     }
     
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
     @Override
-    public boolean isEnable() {
-       return enabled;
+    public boolean getDisponible() {
+       return disponible;
     }
     
 }

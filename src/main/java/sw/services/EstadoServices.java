@@ -27,16 +27,16 @@ public class EstadoServices {
     public int agregarEstado (Estado estado){
       
         Estado estado_=new Estado();
-        estado_.setName(estado.getName());
-        estado_.setEnabled(estado.isEnable());
+        estado_.setNombre(estado.getNombre());
+        estado_.setDisponible(estado.getDisponible());
         return dao.saveAndFlush(estado_)!=null? 0:-1;
     }
     public int actualizarEstado(Estado estado){
        
         Estado temp=dao.findOne(estado.getId());
         temp.setId(estado.getId());
-        temp.setName(estado.getName());
-        temp.setEnabled(estado.isEnable());
+        temp.setNombre(estado.getNombre());
+        temp.setDisponible(estado.getDisponible());
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
 }
