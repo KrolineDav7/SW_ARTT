@@ -12,4 +12,8 @@ package sw.model;
  */
 public interface IModelo {
     
+    String getName();
+    String getDescription();
+    boolean isEnable();
 }
+
