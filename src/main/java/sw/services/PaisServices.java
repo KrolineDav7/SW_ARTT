@@ -9,6 +9,8 @@ package sw.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sw.model.Pais;
+import sw.persistence.DaoPais;
+
 import java.util.List;
 /**
  *
@@ -44,10 +46,5 @@ public class PaisServices {
         temp.setEnabled(pais.isEnable());
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
-   /* public void deleteLabByID(int id){
-        dao.delete(id);
-    }
-    public void deleteLab(Laboratory lab){
-        dao.delete(lab);
-    }*/
+ 
 }

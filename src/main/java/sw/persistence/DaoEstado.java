@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface DaoEstado extends JpaRepository<Estado, Integer> 
 {
-  
+  public Estado obtenerNombre(String nombre);
 }
