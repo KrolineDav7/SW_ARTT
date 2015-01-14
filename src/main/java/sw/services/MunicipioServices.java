@@ -37,6 +37,7 @@ public class MunicipioServices {
         Municipio municipio_=new Municipio();
         municipio_.setNombre(municipio.getNombre());
         municipio_.setDisponible(municipio.getDisponible());
+        municipio_.setEstado(municipio.getEstado());
         return dao.saveAndFlush(municipio_)!=null? 0:-1;
     }
     public int actualizarMunicipio(Municipio municipio){
@@ -44,6 +45,7 @@ public class MunicipioServices {
         Municipio temp=dao.findOne(municipio.getId());
         temp.setId(municipio.getId());
         temp.setNombre(municipio.getNombre());
+        temp.setEstado(municipio.getEstado());
         temp.setDisponible(municipio.getDisponible());
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
