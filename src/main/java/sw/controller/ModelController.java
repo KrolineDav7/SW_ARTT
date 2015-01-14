@@ -16,6 +16,7 @@ public class ModelController
   @Autowired
     ModeloServices soamodelo;
   
+  
   @RequestMapping(value = "/todos", method=RequestMethod.GET)
     public @ResponseBody List<Modelo> getAll()
     {

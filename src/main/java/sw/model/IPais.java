@@ -11,6 +11,6 @@ package sw.model;
  * @author Carolina
  */
 public interface IPais {
-    String getName();
-    boolean isEnable();
+    String getNombre();
+    boolean getDisponible();
 }
