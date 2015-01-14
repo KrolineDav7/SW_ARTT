@@ -7,6 +7,8 @@
 
 package sw.model;
 
+
+import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +25,7 @@ import javax.validation.constraints.Size;
  * @author Carolina
  */
 @Entity
-public class Modelo implements IModelo {
+public class Modelo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -54,7 +56,6 @@ public class Modelo implements IModelo {
         this.id = id;
     }
     
-  	 @Override 
   	 public String getName(){
       return name;
     }
@@ -63,8 +64,7 @@ public class Modelo implements IModelo {
         this.name= name;
     }
     
-  	@Override
-   public boolean isEnable(){
+  	public boolean isEnable(){
      return enabled;
    }
     
@@ -72,7 +72,6 @@ public class Modelo implements IModelo {
         this.enabled = enabled;
     }
   
-  	@Override
   	public String getDescription(){
      return description;
    }
