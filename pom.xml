@@ -9,31 +9,75 @@
 
     <name>SW_ARTT</name>
 
-    <properties>
+     <properties>
+        <spring.version>4.0.0.RELEASE</spring.version>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
     <dependencies>
+        <!-- Spring Data JPA dependencies -->
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>2.5.1</version>
-            <scope>provided</scope>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-jpa</artifactId>
+            <version>1.4.1.RELEASE</version>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
-            <version>2.5.1</version>
-            <scope>provided</scope>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>4.2.6.Final</version>
+        </dependency>
+        
+         <!-- Spring dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+        </dependency>
+        
+        <!-- Validation dependencies -->       
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.1.1.Final</version>
+        </dependency>
+          <dependency>
+               <groupId>org.eclipse.persistence</groupId>
+               <artifactId>eclipselink</artifactId>
+               <version>2.5.2</version>
+          </dependency>
+          <dependency>
+               <groupId>com.typesafe.akka</groupId>
+               <artifactId>akka-actor_2.10</artifactId>
+               <version>2.3.7</version>
+               <type>jar</type>
+          </dependency>
+          <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>${spring.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>    
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

@@ -1,1 +1,1 @@
-{"builders":{"default":"maven"},"type":"maven","attributes":{}}
+{"builders":{"default":"maven"},"runners":{"configs":{"system:/java/web/glassfish4":{"variables":{},"ram":256,"options":{}}},"default":"system:/java/web/glassfish4"},"type":"maven","attributes":{}}
