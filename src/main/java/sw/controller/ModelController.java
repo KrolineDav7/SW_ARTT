@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
+import sw.model.Modelo;
 
 @Controller
 @RequestMapping(value="/modelo")
@@ -18,6 +19,6 @@ public class ModelController
   @RequestMapping(value = "/todos", method=RequestMethod.GET)
     public @ResponseBody List<Modelo> getAll()
     {
-        return soapuntoi.obtenerTodos();
+        return soamodelo.obtenerTodos();
     }
 }
