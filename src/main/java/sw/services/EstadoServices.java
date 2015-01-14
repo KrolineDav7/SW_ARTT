@@ -28,6 +28,7 @@ public class EstadoServices {
       
         Estado estado_=new Estado();
         estado_.setNombre(estado.getNombre());
+        estado_.setPais(estado.getPais());
         estado_.setDisponible(estado.getDisponible());
         return dao.saveAndFlush(estado_)!=null? 0:-1;
     }
@@ -36,6 +37,7 @@ public class EstadoServices {
         Estado temp=dao.findOne(estado.getId());
         temp.setId(estado.getId());
         temp.setNombre(estado.getNombre());
+        temp.setPais(estado.getPais());
         temp.setDisponible(estado.getDisponible());
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
