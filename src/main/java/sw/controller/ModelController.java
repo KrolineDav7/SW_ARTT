@@ -36,10 +36,11 @@ public class ModelController
   @ResponseBody
   public Modelo obtenerXNombre( @PathVariable("nombre") String nombre)
   {
-    return soamodelo.obtenerXNombre(nombre);
+      return null;
+    //return soamodelo.obtenerXNombre(nombre);
   }
   @RequestMapping(value = "/agregar", method=RequestMethod.POST)
-    public @ResponseBody Modelo addPost(@RequestParam(required=true) String nombre,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean disp,@RequestParam(required=true) String colonia)
+    public @ResponseBody int addPost(@RequestParam(required=true) String nombre,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean disp,@RequestParam(required=true) String colonia)
     {
       Modelo temp = new Modelo();
         temp.setNombre(nombre);
@@ -50,7 +51,7 @@ public class ModelController
       return soamodelo.agregarModelo(temp);
     }
   @RequestMapping(value = "/editar", method=RequestMethod.POST)
-    public @ResponseBody Modelo editarPost(@RequestParam(required=true) Integer id,@RequestParam(required=true) String nombre,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean disp,@RequestParam(required=true) String colonia)
+    public @ResponseBody int editarPost(@RequestParam(required=true) Integer id,@RequestParam(required=true) String nombre,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean disp,@RequestParam(required=true) String colonia)
     {
         Modelo temp = new Modelo();
           temp.setNombre(nombre);
