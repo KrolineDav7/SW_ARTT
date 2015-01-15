@@ -35,7 +35,7 @@ public class ModeloServices {
     public int actualizarModelo(	Modelo modelo){
        
         Modelo temp=dao.findOne(modelo.getId());
-        temp.setId(modelo.getId());
+        temp.setId(modelo.getId()); // No creo que esto vaya... 
         temp.setNombre(modelo.getNombre());
         temp.setColonia(modelo.getColonia());
         temp.setDisponible(modelo.getDisponible());
