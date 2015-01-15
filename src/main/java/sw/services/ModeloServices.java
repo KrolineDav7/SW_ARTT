@@ -29,6 +29,7 @@ public class ModeloServices {
         modelo_.setNombre(modelo.getNombre());
         modelo_.setColonia(modelo.getColonia());
         modelo_.setDisponible(modelo.getDisponible());
+        modelo_.setDescripcion(modelo.getDescripcion());
         return dao.saveAndFlush(modelo_)!=null? 0:-1;
     }
     public int actualizarModelo(	Modelo modelo){
@@ -38,6 +39,12 @@ public class ModeloServices {
         temp.setNombre(modelo.getNombre());
         temp.setColonia(modelo.getColonia());
         temp.setDisponible(modelo.getDisponible());
+        temp.setDescripcion(modelo.getDescripcion());
          return dao.saveAndFlush(temp)!=null? 0:-1;
+    }
+    public int eliminarModelo (Modelo modelo){
+      Modelo temp=dao.findOne(modelo.getId());
+      temp.setDisponible(false);
+      return dao.saveAndFlush(temp)!=null? 0:-1;
     }
 }
