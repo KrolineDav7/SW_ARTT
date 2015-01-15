@@ -9,7 +9,6 @@ package sw.services;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sw.model.Estado;
 import sw.model.Municipio;
 import sw.persistence.DaoMunicipio;
 
