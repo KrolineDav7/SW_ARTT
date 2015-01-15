@@ -27,8 +27,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "sw.persistence")
 @PropertySources(value = {
-    @PropertySource(value = {"META-INF/conf/hibernate.properties"}),
-    @PropertySource(value = {"META-INF/conf/jdbc.properties"})
+    @PropertySource(value = {"META-INF/config/hibernate.properties"}),
+    @PropertySource(value = {"META-INF/config/jdbc.properties"})
 })
 public class PersistenceConfig {
 

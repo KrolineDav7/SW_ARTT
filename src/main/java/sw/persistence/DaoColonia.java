@@ -9,4 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface DaoColonia extends JpaRepository<Colonia, Integer> 
 {
+  public Colonia obtenerXNombre(String nombre);
 }
