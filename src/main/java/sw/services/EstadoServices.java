@@ -14,9 +14,9 @@ public class EstadoServices {
    @Autowired 
    private DaoEstado dao;
     
-    public Estado obtenerNombre(String nombre){
+    /*public Estado obtenerNombre(String nombre){
        return dao.obtenerNombre(nombre); 
-    }
+    }*/
     public List<Estado>obtenerTodos(){
         return dao.findAll();
     }
