@@ -15,7 +15,8 @@ public class ModeloServices {
   private DaoModelo dao;
   
    public  Modelo obtenerXNombre(String nombre){
-       return dao.obtenerXNombre(nombre); 
+       //return dao.obtenerXNombre(nombre); 
+       return null;
     }
     public List<Modelo>obtenerTodos(){
         return dao.findAll();
