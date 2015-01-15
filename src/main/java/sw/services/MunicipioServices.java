@@ -21,9 +21,9 @@ public class MunicipioServices {
     @Autowired
     private DaoMunicipio dao;
     
-      public Municipio obtenerXNombre(String nombre){
+      /*public Municipio obtenerXNombre(String nombre){
        return dao.obtenerXNombre(nombre); 
-    }
+    }*/
     public List<Municipio>obtenerTodos(){
         return dao.findAll();
     }
