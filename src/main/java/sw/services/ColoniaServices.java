@@ -14,9 +14,9 @@ public class ColoniaServices {
   @Autowired 
   private DaoColonia dao;
   
-   public Colonia obtenerXNombre(String nombre){
+   /*public Colonia obtenerXNombre(String nombre){
        return dao.obtenerXNombre(nombre); 
-    }
+    }*/
     public List<Colonia>obtenerTodos(){
         return dao.findAll();
     }
