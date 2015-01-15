@@ -58,7 +58,7 @@ public class PersistenceConfig {
         jpaProperties.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
         jpaProperties.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
         jpaProperties.put("hibernate.ejb.naming_strategy", env.getProperty("hibernate.ejb.naming_strategy"));
-        jpaProperties.put("hibernate.ejb.entitymanager_factory_name", env.getProperty("hibernate.ejb.entitymanager_factory_name"));
+        //jpaProperties.put("hibernate.ejb.entitymanager_factory_name", env.getProperty("hibernate.ejb.entitymanager_factory_name"));
         
 
         factory.setJpaProperties(jpaProperties);
