@@ -13,13 +13,14 @@ import sw.model.Modelo;
 @RequestMapping(value="/modelo")
 public class ModelController 
 {
-  @Autowired
-    ModeloServices soamodelo;
+//  @Autowired
+    //ModeloServices soamodelo;
   
   
   @RequestMapping(value = "/todos", method=RequestMethod.GET)
     public @ResponseBody List<Modelo> getAll()
     {
-        return soamodelo.obtenerTodos();
+//        return soamodelo.obtenerTodos();
+    		return null;
     }
 }

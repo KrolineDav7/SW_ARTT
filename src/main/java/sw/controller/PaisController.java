@@ -11,7 +11,7 @@ import sw.model.Pais;
 import sw.services.PaisServices;
 
 @Controller
-@RequestMapping(value="/modelo")
+@RequestMapping(value="/pais")
 public class PaisController 
 {
   @Autowired

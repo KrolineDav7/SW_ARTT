@@ -9,4 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface DaoModelo extends JpaRepository<Modelo, Integer> 
 {
+    public Modelo obtenerXNombre(String nombre);
+
 }
