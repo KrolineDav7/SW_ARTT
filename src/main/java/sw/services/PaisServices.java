@@ -21,9 +21,9 @@ public class PaisServices {
    @Autowired 
    private DaoPais dao;
     
-    public Pais getByName(String name){
+    /*public Pais getByName(String name){
        return dao.getByName(name); 
-    }
+    }*/
     public List<Pais>getAll(){
         return dao.findAll();
     }
