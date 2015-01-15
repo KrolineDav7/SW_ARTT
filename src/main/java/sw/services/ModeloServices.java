@@ -20,7 +20,7 @@ public class ModeloServices {
     public List<Modelo>obtenerTodos(){
         return dao.findAll();
     }
-    public Modelo obtnerUno (int id){
+    public Modelo obtenerUno (int id){
         return dao.findOne(id);
     }
     public int agregarModelo (Modelo modelo){

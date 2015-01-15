@@ -8,19 +8,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 import sw.model.Modelo;
+import sw.services.ModeloServices;
 
 @Controller
 @RequestMapping(value="/modelo")
 public class ModelController 
 {
-//  @Autowired
-    //ModeloServices soamodelo;
+    @Autowired
+    ModeloServices soamodelo;
   
   
   @RequestMapping(value = "/todos", method=RequestMethod.GET)
     public @ResponseBody List<Modelo> getAll()
     {
-//        return soamodelo.obtenerTodos();
-    		return null;
+		 return soamodelo.obtenerTodos();
     }
+ /* @RequestMapping(value ="/modelo/{id}")
+  @ResponseBody
+  public Modelo obtenerUno( @PathVariable("id") int id){
+    return soamodelo.obtenerUno(id);
+  }*/
 }
