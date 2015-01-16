@@ -9,56 +9,54 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
-import sw.model.Modelo;
-import sw.services.ModeloServices;
+import sw.model.Model;
+import sw.services.ModelServices;
 
 @Controller
-@RequestMapping(value="/modelo")
+@RequestMapping(value="/model")
 public class ModelController 
 {
     @Autowired
-    ModeloServices soamodelo;
+    ModelServices soamodelo;
   
   
-  @RequestMapping(value = "/todos", method=RequestMethod.GET)
-    public @ResponseBody List<Modelo> getAll()
+  @RequestMapping(value = "/all", method=RequestMethod.GET)
+    public @ResponseBody List<Model> getAll()
     {
-		 return soamodelo.obtenerTodos();
+		 return soamodelo.getAll();
     }
-  
-  @RequestMapping(value ="/modelo/{id}")
+  @RequestMapping(value ="/{id}")
   @ResponseBody
-  public Modelo obtenerUno( @PathVariable("id") int id)
+  public Model getOne( @PathVariable("id") int id)
   {
-    return soamodelo.obtenerUno(id);
+    return soamodelo.getOne(id);
   }
-  @RequestMapping(value ="/modelo/nombre/{nombre}")
+  @RequestMapping(value ="/name/{name}")
   @ResponseBody
-  public Modelo obtenerXNombre( @PathVariable("nombre") String nombre)
+  public Model obtenerXNombre( @PathVariable("name") String name)
   {
-      return null;
-    //return soamodelo.obtenerXNombre(nombre);
+    return soamodelo.getByName(name);
   }
-  @RequestMapping(value = "/agregar", method=RequestMethod.POST)
-    public @ResponseBody int addPost(@RequestParam(required=true) String nombre,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean disp,@RequestParam(required=true) String colonia)
+  @RequestMapping(value = "/add", method=RequestMethod.POST)
+    public @ResponseBody int addPost(@RequestParam(required=true) String name,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean enabled,@RequestParam(required=true) String town)
     {
-      Modelo temp = new Modelo();
-        temp.setNombre(nombre);
-      temp.setDescripcion(desc);
-      temp.setDisponible(disp);
+      Model temp = new Model();
+      temp.setName(name);
+      temp.setDescription(desc);
+      temp.setEnable(enabled);
       //Despues agregar el objeto colonia partiendo de un id
-      temp.setColonia(null);
-      return soamodelo.agregarModelo(temp);
+      //temp.setTown(null);
+      return soamodelo.addModel(temp);
     }
-  @RequestMapping(value = "/editar", method=RequestMethod.POST)
-    public @ResponseBody int editarPost(@RequestParam(required=true) Integer id,@RequestParam(required=true) String nombre,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean disp,@RequestParam(required=true) String colonia)
+  @RequestMapping(value = "/modify", method=RequestMethod.POST)
+    public @ResponseBody int editarPost(@RequestParam(required=true) Integer id,@RequestParam(required=true) String name,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean enabled,@RequestParam(required=true) String colonia)
     {
-        Modelo temp = new Modelo();
-          temp.setNombre(nombre);
-        temp.setDescripcion(desc);
-        temp.setDisponible(disp);
+        Model temp = new Model();
+        temp.setName(name);
+        temp.setDescription(desc);
+        temp.setEnable(enabled);
         //Despues agregar el objeto colonia partiendo de un id
-        temp.setColonia(null);
-        return soamodelo.actualizarModelo(temp);
+        //temp.setTown(null);
+        return soamodelo.updateModel(temp);
     }
 }
