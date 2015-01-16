@@ -9,5 +9,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface DaoTown extends JpaRepository<Town, Integer> 
 {
-    public Town getByName(String nae);
+    public Town getByName(String name);
 }
