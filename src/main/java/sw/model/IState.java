@@ -11,6 +11,6 @@ package sw.model;
  * @author Carolina
  */
 public interface IState {
-    String getState();
+    String getName();
     boolean getEnable();
 }
