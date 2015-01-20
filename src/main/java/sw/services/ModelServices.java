@@ -38,6 +38,7 @@ public class ModelServices {
         model_.setLatitude(model.getLatitude());
         model_.setEnable(model.getEnable());
         model_.setDescription(model.getDescription());
+        
         return dao.saveAndFlush(model_)!=null? 0:-1;
     }
     public int updateModel(Model model){
