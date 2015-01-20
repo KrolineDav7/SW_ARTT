@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 import sw.model.Model;
+import sw.model.Suburb;
 import sw.persistence.DaoModel;
 
 @Service
@@ -19,6 +20,11 @@ public class ModelServices {
     }
     public List<Model>getAll(){
         return dao.findAll();
+    }
+    public List<Model>getBySuburb(int id){
+        Suburb suburb=new Suburb();
+        suburb.setId(id);
+        return dao.getBySuburb(suburb);
     }
     public Model getOne (int id){
         return dao.findOne(id);
