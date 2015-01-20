@@ -102,8 +102,8 @@ public class Model implements Serializable {
     public float getLongitude(){
         return longitude;
     }
-    public void setLongitude(){
-        longitude=longitude;
+    public void setLongitude(float longitude){
+        this.longitude=longitude;
     }
     @Override
     public int hashCode() {
