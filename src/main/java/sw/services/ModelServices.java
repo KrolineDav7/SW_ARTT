@@ -34,6 +34,8 @@ public class ModelServices {
         Model model_=new Model();
         model_.setName(model.getName());
         model_.setSuburb(model.getSuburb());
+        model_.setLongitude(model.getLongitude());
+        model_.setLatitude(model.getLatitude());
         model_.setEnable(model.getEnable());
         model_.setDescription(model.getDescription());
         return dao.saveAndFlush(model_)!=null? 0:-1;
@@ -44,6 +46,8 @@ public class ModelServices {
         temp.setId(model.getId()); // No creo que esto vaya... 
         temp.setName(model.getName());
         temp.setSuburb(model.getSuburb());
+        temp.setLongitude(model.getLongitude());
+        temp.setLatitude(model.getLatitude());
         temp.setEnable(model.getEnable());
         temp.setDescription(model.getDescription());
          return dao.saveAndFlush(temp)!=null? 0:-1;
