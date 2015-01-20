@@ -39,16 +39,18 @@ public class ModelController
   }
   @RequestMapping(value ="/name/{name}")
   @ResponseBody
-  public Model obtenerXNombre( @PathVariable("name") String name)
+  public Model getByName( @PathVariable("name") String name)
   {
     return soamodelo.getByName(name);
   }
   @RequestMapping(value = "/add", method=RequestMethod.POST)
-    public @ResponseBody int addPost(@RequestParam(required=true) String name,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean enabled,@RequestParam(required=true) String town)
+    public @ResponseBody int addPost(@RequestParam(required=true) String name,@RequestParam(required=true) String desc,@RequestParam(required=true) boolean enabled,@RequestParam(required=true) String town, @RequestParam(required=true)float latitude, @RequestParam(required=true)float longitude)
     {
       Model temp = new Model();
       temp.setName(name);
       temp.setDescription(desc);
+      temp.setLatitude(latitude);
+      temp.setLongitude(longitude);
       temp.setEnable(enabled);
       //Despues agregar el objeto colonia partiendo de un id
       //temp.setTown(null);
