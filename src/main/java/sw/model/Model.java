@@ -41,6 +41,12 @@ public class Model implements Serializable {
     @Size(min=1, max =300)
     @Column(unique=true)
     private String description;
+    
+    @NotNull
+    private float latitude;
+    
+    @NotNull 
+    private float longitude;
   
     @NotNull
     private boolean enabled;
@@ -71,7 +77,7 @@ public class Model implements Serializable {
    }
     
    public void setEnable(boolean enable) {
-        this.enabled = enabled;
+        this.enabled = enable;
     }
   
     public String getDescription(){
@@ -87,11 +93,22 @@ public class Model implements Serializable {
     public void setSuburb(Suburb suburb){
         this.suburb=suburb;
     }
-
+    public float getLatitude(){
+        return latitude;
+    }
+    public void setLatitude(float latitude){
+        this.latitude=latitude;
+    }
+    public float getLongitude(){
+        return longitude;
+    }
+    public void setLongitude(){
+        longitude=longitude;
+    }
     @Override
     public int hashCode() {
-        int hash = 0;
-        
+        int hash = 17;
+        hash = 13 * hash + this.id;
         return hash;
     }
 
