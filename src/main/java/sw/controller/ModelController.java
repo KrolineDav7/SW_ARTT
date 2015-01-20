@@ -31,6 +31,12 @@ public class ModelController
   {
     return soamodelo.getOne(id);
   }
+  @RequestMapping(value ="/suburb/{id}")
+  @ResponseBody
+  public List<Model> getBySuburb( @PathVariable("id") int id)
+  {
+    return soamodelo.getBySuburb(id);
+  }
   @RequestMapping(value ="/name/{name}")
   @ResponseBody
   public Model obtenerXNombre( @PathVariable("name") String name)
