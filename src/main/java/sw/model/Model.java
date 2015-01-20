@@ -47,6 +47,16 @@ public class Model implements Serializable {
     
     @NotNull 
     private float longitude;
+    
+    @NotNull
+    @Size(min = 1, max = 150)
+    @Column(unique = true)
+    private String file1;
+    
+    @NotNull
+    @Size(min = 1, max = 150)
+    @Column(unique = true)
+    private String file2;
   
     @NotNull
     private boolean enabled;
@@ -104,6 +114,18 @@ public class Model implements Serializable {
     }
     public void setLongitude(float longitude){
         this.longitude=longitude;
+    }
+    public String getFile1Path(){
+        return file1;
+    }
+    public String getFile2Path(){
+        return file2;
+    }
+    public void setFile1Path(String file1){
+        this.file1=file1;
+    }
+    public void setFile2Path(String file2){
+        this.file2=file2;
     }
     @Override
     public int hashCode() {
