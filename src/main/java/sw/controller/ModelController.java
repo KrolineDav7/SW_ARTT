@@ -33,9 +33,9 @@ public class ModelController
   }
   @RequestMapping(value ="/suburb/{id}")
   @ResponseBody
-  public List<Model> getBySuburb( @PathVariable("id") int id)
+  public List<Model> getBySuburb( @PathVariable("ID_Suburb") int ID_Suburb)
   {
-    return soamodelo.getBySuburb(id);
+    return soamodelo.getBySuburb(ID_Suburb);
   }
   @RequestMapping(value ="/name/{name}")
   @ResponseBody
