@@ -21,9 +21,9 @@ public class ModelServices {
     public List<Model>getAll(){
         return dao.findAll();
     }
-    public List<Model>getBySuburb(int id){
+    public List<Model>getBySuburb(int ID_Suburb){
         Suburb suburb=new Suburb();
-        suburb.setId(id);
+        suburb.setId(ID_Suburb);
         return dao.getBySuburb(suburb);
     }
     public Model getOne (int id){
