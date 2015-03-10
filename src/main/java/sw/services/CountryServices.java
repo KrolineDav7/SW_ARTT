@@ -12,6 +12,7 @@ import sw.model.Country;
 import sw.persistence.DaoCountry;
 
 import java.util.List;
+import sw.persistence.DaoState;
 /**
  *
  * @author Carolina
@@ -21,9 +22,6 @@ public class CountryServices {
    @Autowired 
    private DaoCountry dao;
     
-    /*public Pais getByName(String name){
-       return dao.getByName(name); 
-    }*/
     public List<Country>getAll(){
         return dao.findAll();
     }
@@ -45,6 +43,18 @@ public class CountryServices {
         temp.setName(country.getName());
         temp.setEnable(country.getEnable());
          return dao.saveAndFlush(temp)!=null? 0:-1;
+    }
+    public int deleteCountry(Country country){
+        int var=1;
+        Country temp=dao.findOne(country.getId());
+        /*if(daos.findByCountry(country).isEmpty()){
+            temp.setEnable(false);
+            if (dao.saveAndFlush(temp)!=null)
+                var=0;
+            else
+                var=-1;
+        }*/
+       return var; 
     }
  
 }
