@@ -6,9 +6,11 @@
 
 package sw.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sw.model.State;
 import sw.model.Town;
 import sw.persistence.DaoTown;
 
@@ -47,5 +49,15 @@ public class TownServices {
         temp.setState(town.getState());
         temp.setEnable(town.getEnable());
          return dao.saveAndFlush(temp)!=null? 0:-1;
+    }
+    public List<Town> getTownByState(State state){
+        List<Town> temp=new ArrayList();
+        List<Town> all=dao.findAll();
+        for(int i=0; i<all.size(); i++){
+            if (all.get(i).getState().equals(state)){
+                temp.add(all.get(i));
+            }
+        }
+        return temp;
     }
 }
