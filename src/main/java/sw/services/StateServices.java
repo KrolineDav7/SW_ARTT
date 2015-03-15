@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import sw.model.Country;
 
 import sw.model.State;
 import sw.persistence.DaoState;
@@ -43,14 +42,5 @@ public class StateServices {
         temp.setEnable(state.getEnable());
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
-    public List<State> findByCountry(Country country){
-        List<State> temp= new ArrayList();
-        List<State> all=dao.findAll();
-        for(int i=0; i<all.size(); i++){
-            if (all.get(i).getCountry().equals(country)){
-                temp.add(all.get(i));
-            }
-        }
-        return temp;
-    }
+ 
 }

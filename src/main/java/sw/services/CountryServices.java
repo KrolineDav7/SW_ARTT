@@ -12,6 +12,8 @@ import sw.model.Country;
 import sw.persistence.DaoCountry;
 
 import java.util.List;
+import sw.model.State;
+import sw.persistence.DaoState;
 /**
  *
  * @author Carolina
@@ -20,6 +22,7 @@ import java.util.List;
 public class CountryServices {
    @Autowired 
    private DaoCountry dao;
+   private DaoState daos;
     
     public List<Country>getAll(){
         return dao.findAll();
@@ -44,14 +47,18 @@ public class CountryServices {
          return dao.saveAndFlush(temp)!=null? 0:-1;
     }
     public int deleteCountry(Country country){
-        int var=1;
+        int var=-1;
         Country temp=dao.findOne(country.getId());
-        /*if(daos.findByCountry(country).isEmpty()){
+        List<State> states=daos.findAll();
+           /*for(int i=0; i<this.getAll().size(); i++){
+            if (this.getAll().get(i).getCountry().equals(country)){
+                temp.add(this.getAll().get(i));
+            }
+        }*/
+       /* if(soa.findByCountry(country).isEmpty()){
             temp.setEnable(false);
             if (dao.saveAndFlush(temp)!=null)
                 var=0;
-            else
-                var=-1;
         }*/
        return var; 
     }

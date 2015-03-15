@@ -1,5 +1,6 @@
 package sw.services;
 
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -57,5 +58,15 @@ public class ModelServices {
       Model temp=dao.findOne(model.getId());
       temp.setEnable(false);
       return dao.saveAndFlush(temp)!=null? 0:-1;
+    }
+    public List<Model> getModelBySuburb(Suburb suburb){
+        List<Model> temp=new ArrayList();
+        List<Model> all=dao.findAll();
+        for(int i=0; i<all.size(); i++){
+            if (all.get(i).getSuburb().equals(suburb)){
+                temp.add(all.get(i));
+            }
+        }
+        return temp;
     }
 }
